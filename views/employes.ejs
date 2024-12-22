@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Employes List</h1>
+    <table border="1px" width="100%">
+        <tr>
+            <th>So No</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Mobail No.</th>  
+            <th>Action</th>  
+        </tr>
+        
+
+            <% if (employes.length > 0) { %>
+              <% for (let i = 0; i < employes.length; i++) { %>
+                <tr>
+                  <td><%- employes[i].id %></td>
+                  <td><%- employes[i].name %></td>
+                  <td><%- employes[i].address %></td>
+                  <td><%- employes[i].Phone_NO %></td>
+                  <td>
+                    <a href="/delete-employes?id=<%- employes[i].id %>">Delete</a>
+                    <a href="/update-employes?id=<%- employes[i].id %>">Update</a>
+                  </td>
+
+                </tr>
+              <% } %>
+            <% } else { %>
+              <h1>Employees Data Not Found</h1>
+            <% } %>
+          </table>
+          
+    
+    </table>
+</body>
+</html>

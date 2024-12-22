@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+      display: grid;
+      justify-items: center;
+      background-color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color:aqua;
+      text-align: center;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="submit"] {
+      width: 50%;
+      padding: 10px;
+      margin: 15px 80px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    input[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
+
+    table {
+      width: 90%;
+      background-color: cadetblue;
+      color:aqua;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Search Student</h1>
+  <form action="/search-employes" method="GET">
+    <input type="text" name="name" placeholder="Enter Name"><br>
+    <input type="text" name="address" placeholder="Enter Address"><br>
+    <input type="number" name="Phone_NO" placeholder="Enter Phone Number"><br>
+    <input type="submit" value="Search">
+  </form>
+
+
+
+  <h1>Students List</h1>
+  <table border="1px" width="100%">
+    <tr>
+      <th>So No</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Mobail No.</th>
+    </tr>
+
+    <% if (employes.length> 0) { %>
+      <% for (let i=0; i < employes.length; i++) { %>
+        <tr>
+          <td><%- employes[i].id %></td>
+          <td><%- employes[i].name %></td>
+          <td><%- employes[i].address %></td>
+          <td><%- employes[i].Phone_NO %></td>
+
+        </tr>
+        <% } %>
+          <% } %>
+  </table>
+
+
+  </table>
+</body>
+
+</html>
